@@ -1,0 +1,57 @@
+[
+  {
+    "type": "All Knives",
+    "price": 100,
+    "per_inch": true
+  },
+  {
+    "type": "Knife and Clever Resurfacing",
+    "price": 300,
+    "per_inch": true
+  },
+  {
+    "type": "Garden Clippers or Loppers",
+    "price": 100,
+    "per_inch": true
+  },
+  {
+    "type": "Lawnmower Blade (already removed)",
+    "price": 1000,
+    "per_inch": true
+  },
+  {
+    "type": "Pick, Shovel, or Hoe",
+    "price": 300,
+    "per_inch": true
+  },
+  {
+    "type": "Scissors (under 5\")",
+    "price": 800,
+    "per_inch": false
+  },
+  {
+    "type": "Scissors (over 5\")",
+    "price": 1000,
+    "per_inch": false
+  },
+  {
+    "type": "Chisels, Plane Blades",
+    "price": 200,
+    "per_inch": false
+  },
+  {
+    "type": "Loppers",
+    "price": 1000,
+    "per_inch": false
+  },
+  {
+    "type": "Pruners",
+    "price": 800,
+    "per_inch": false
+  },
+  {
+    "type": "Grass Clippers",
+    "price": 800,
+    "per_inch": false
+  }
+]

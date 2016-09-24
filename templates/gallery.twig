@@ -1,0 +1,40 @@
+{% extends 'skeleton.twig' %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+  <article>
+    <h1>Photo Gallery</h1>
+    <p>Below you can look through a few photos of us at work.</p>
+    <div class="images">
+      <ul>
+        {% for image in imageList %}
+          <li>
+            <a href="/images/photos/{{ image }}" class="fancybox" rel="group">
+              <img src="/images/photos/{{ image }}">
+            </a>
+          </li>
+        {% else %}
+          <li>Error loading images...</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </article>
+{% endblock %}
+
+{% block scripts %}
+<script src="js/jquery-1.10.1.min.js"></script>
+<link rel="stylesheet" href="fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script src="fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<link rel="stylesheet" href="fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script src="fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script src="fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet" href="fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script src="fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+<script>
+$(document).ready(function () {
+  $('.fancybox').fancybox();
+});
+</script>
+{% endblock %}

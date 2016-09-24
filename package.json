@@ -1,0 +1,25 @@
+{
+  "name": "southriversharpening",
+  "version": "0.0.1",
+  "description": "Website for South River Sharpening",
+  "private": true,
+  "author": {
+    "name": "Dave Smith-Hayes",
+    "email": "me@davesmithhayes.com",
+    "url": "http://davesmithhayes.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3",
+    "bootstrap-sass": "^3.3.7",
+    "webpack": "^1.13.2",
+    "webpack-stream": "3.2.0",
+    "fancybox": "^3.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+{% extends 'skeleton.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+  <article>
+    <h1>Contact</h1>
+    <p>Feel free to call us at <a href="tel:17058251812">(705) 825-1812</a>.</p>
+    <p>If you'd like to email us, you can do so at
+      <a href="mailto:info@southriversharpening.ca">info@southriversharpening.ca.</a></p>
+    <p>We're located at 322 HWY-124 in South River, Ontario, P0A 1Z0</p>
+    <p>We are also open for walk-ins from <strong>9am</strong> to
+      <strong>5pm</strong>. Closed on Sunday.</p>
+    <p>Please <a href="https://www.facebook.com/southriversharpeningChrisCoop">check us out on Facebook!</a></p>
+
+    {{ include('google_maps.twig') }}
+
+  </article>
+{% endblock %}

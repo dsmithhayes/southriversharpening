@@ -1,6 +1,6 @@
 <?php
 
-$app = require_once '../bootstrap.php';
+$app = require_once '../admin_bootstrap.php';
 
 use Psr\Message\Http\ServerRequestInterface as Request;
 use Psr\Message\Http\ResponseInterface as Response;

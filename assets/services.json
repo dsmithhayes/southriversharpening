@@ -1,56 +1,49 @@
 [
   {
-    "type": "All Knives",
+    "type": "Professional and Home Knives, Hunting Knives, & Machetes",
+    "condition": null,
     "price": 100,
     "per_inch": true
   },
   {
-    "type": "Knife and Clever Resurfacing",
-    "price": 300,
-    "per_inch": true
+    "type": "Kitchen, Seamstress, & Hobby Scissors",
+    "condition": "Under 5\".",
+    "price": 8000,
+    "per_inch": false
   },
   {
-    "type": "Garden Clippers or Loppers",
-    "price": 100,
-    "per_inch": true
-  },
-  {
-    "type": "Lawnmower Blade (already removed)",
+    "type": "Kitchen, Seamstress, & Hobby Scissors",
+    "condition": "Over 5\".",
     "price": 1000,
     "per_inch": true
+  },
+  {
+    "type": "Hatches, Axes, & Splitters",
+    "condition": null,
+    "price": 1000,
+    "per_inch": false
   },
   {
     "type": "Pick, Shovel, or Hoe",
+    "condition": null,
     "price": 300,
     "per_inch": true
   },
   {
-    "type": "Scissors (under 5\")",
-    "price": 800,
-    "per_inch": false
-  },
-  {
-    "type": "Scissors (over 5\")",
-    "price": 1000,
-    "per_inch": false
-  },
-  {
-    "type": "Chisels, Plane Blades",
+    "type": "Chisels, Hand Planer Blades, Tin Snips, & Wire Cutters",
+    "condition": null,
     "price": 200,
     "per_inch": false
   },
   {
-    "type": "Loppers",
+    "type": "Lawnmower Blade",
+    "condition": "Blade must already be removed from lawnmower.",
     "price": 1000,
     "per_inch": false
   },
   {
-    "type": "Pruners",
-    "price": 800,
-    "per_inch": false
-  },
-  {
-    "type": "Grass Clippers",
+    "type": "Hand Garden Tools, Pruners, & Clippers",
+    "condition": null,
     "price": 800,
     "per_inch": false
   }

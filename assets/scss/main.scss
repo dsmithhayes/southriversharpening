@@ -76,28 +76,41 @@ body {
     text-indent: 2em;
     line-height: 1.5em;
     font-size: $readable_size;
+
+    &.disclaimer {
+      font-size: $disclaimer_size;
+      font-style: italic;
+      font-weight: 300;
+    }
   }
 
   table {
     width: 95%;
     margin: 0 auto 2em auto;
     font-size: 12pt;
+
+    th {
+      padding: 0.5em;
+      background-color: $black;
+      color: #fff;
+      font-size: 14pt;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    td {
+      border: 1px solid #c4c4c4;
+      padding: 0.5em;
+      font-family: 'Crimson Text', serif;
+      font-size: 16pt;
+      font-weight: 300;
+    }
   }
 
-  th {
-    padding: 0.5em;
-    background-color: $black;
-    color: #fff;
-    font-size: 14pt;
-    font-weight: 700;
-    text-align: left;
-  }
-  td {
-    border: 1px solid #c4c4c4;
-    padding: 0.5em;
-    font-family: 'Crimson Text', serif;
-    font-size: 16pt;
-    font-weight: 300;
+  sub {
+    font-style: italic;
+    padding-left: 1em;
+    letter-spacing: 0.05em;
   }
 
   ul {

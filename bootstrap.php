@@ -50,6 +50,17 @@ $container['gallery'] = function ($container) {
 };
 
 /**
+ * Raw services data
+ */
+
+$container['services'] = function ($container) {
+    return json_decode(
+        file_get_contents(dirname(__FILE__) . '/assets/services.json'),
+        true
+    );
+};
+
+/**
  * The bootstrap file acts as the application initialization.
  */
 return $app;

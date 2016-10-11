@@ -13,7 +13,12 @@
       </tr>
       {% for service in services %}
       <tr>
-        <td>{{ service.type }}</td>
+        <td>
+          {{ service.type }}
+          {% if service.condition is not null %}
+            <div><sub>{{ service.condition }}</sub></div>
+          {% endif %}
+        </td>
         <td>{{ service.price }}</td>
       </tr>
       {% endfor %}
@@ -21,11 +26,16 @@
   </section>
 
   <article>
+    <p class="disclaimer">
+      We do not sharpen hair styling scissors, or grroming blades.
+    </p>
+    <p class="disclaimer">
+      Damanged tools and/or knives will be subject to extra charges.
+    </p>
     <p>
-      We are also available to quote on jobs. Please email us at
-      <a href="mailto:info@southriversharpening.ca">
-        info@southriversharpening.ca
-      </a>, or give us a call at <a href="tel:17058251812">(705) 825-1812</a>
+      We are also available to quote on jobs. Please feel free to
+      <a href="mailto:info@southriversharpening.ca">email us</a>, or give us a
+      call at <a href="tel:17058251812">(705) 825-1812</a>.
     </p>
   </article>
 {% endblock %}

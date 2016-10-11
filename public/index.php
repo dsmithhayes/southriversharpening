@@ -27,10 +27,11 @@ $app->get('/[home]', function (Request $req, Response $res) {
  * The services page describes what services are available to customers
  */
 $app->get('/services', function (Request $req, Response $res) {
-    $services = json_decode(
-        file_get_contents('../assets/services.json'),
-        true
-    );
+    $services = $this->services;
+
+    if (!is_array($services)) {
+        throw new Exception('What the fuck: ' . json_last_error_msg());
+    }
 
     $i = 0;
     foreach ($services as $service) {
@@ -38,10 +39,8 @@ $app->get('/services', function (Request $req, Response $res) {
         $services[$i]['price'] = "$" . number_format($cost, 2);
 
         if ($service['per_inch']) {
-            $services[$i]['price'] .= " per inch";
+            $services[$i++]['price'] .= " per inch";
         }
-
-        $i++;
     }
 
     return $this->view->render($res, 'services.twig', [

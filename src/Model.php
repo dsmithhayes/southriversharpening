@@ -13,7 +13,7 @@ class Model
      * @var \PDO
      *      The instanciated PDO objects representing the model
      */
-    private $dbh;
+    private $pdo;
 
     /**
      * @param \Interop\Container\ContainerInterface $container
@@ -29,15 +29,34 @@ class Model
         $this->tableName = ($tableName) ?? $this->buildTableName();
     }
 
+    /**
+     * @param string $tableName
+     *      The name of the table to get data from
+     */
     public function setTableName(string $tableName)
     {
         $this->tableName = $tableName;
         return $this;
     }
 
+    /**
+     * @return string
+     *      The current name of the table
+     */
     public function getTableName(): string
     {
         return $this->tableName;
+    }
+
+    /**
+     * @param int $id
+     *      The primary key of the model data in the database
+     * @return array
+     *      An array of the column names and data
+     */
+    public function get(int $id): array
+    {
+
     }
 
     /**

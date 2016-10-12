@@ -16,7 +16,9 @@
         <td>
           {{ service.type }}
           {% if service.condition is not null %}
-            <div><sub>{{ service.condition }}</sub></div>
+            <div>
+              <sub>{{ service.condition }}</sub>
+            </div>
           {% endif %}
         </td>
         <td>{{ service.price }}</td>

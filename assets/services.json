@@ -8,14 +8,8 @@
   {
     "type": "Kitchen, Seamstress, & Hobby Scissors",
     "condition": "Under 5\".",
-    "price": 8000,
+    "price": 800,
     "per_inch": false
-  },
-  {
-    "type": "Kitchen, Seamstress, & Hobby Scissors",
-    "condition": "Over 5\".",
-    "price": 1000,
-    "per_inch": true
   },
   {
     "type": "Hatches, Axes, & Splitters",

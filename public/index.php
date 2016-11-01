@@ -39,8 +39,10 @@ $app->get('/services', function (Request $req, Response $res) {
         $services[$i]['price'] = "$" . number_format($cost, 2);
 
         if ($service['per_inch']) {
-            $services[$i++]['price'] .= " per inch";
+            $services[$i]['price'] .= " per inch";
         }
+
+        $i++;
     }
 
     return $this->view->render($res, 'services.twig', [

@@ -3,3 +3,6 @@ composer.lock
 node_modules
 public/css
 public/js
+.vagrant
+www.pid
+assets/data.db

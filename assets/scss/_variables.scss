@@ -4,7 +4,13 @@ $brown: #a94f33;
 $nav_brown: #eac585;
 
 $black: #212121;
-$nav_black: #000000;
+$nav_black: #0C0C0C;
 
 $readable_size: 18pt;
 $disclaimer_size: 14pt;
+
+// Breakpoints
+$max-width: 1440px;
+$med-width: 1200px;
+$sm-width: 1000px;
+$xsm-width: 800px

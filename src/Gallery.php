@@ -37,7 +37,6 @@ class Gallery
     public function __construct(string $location)
     {
         $this->location = $location;
-        $this->imagick = new Imagick($this->readDir());
     }
 
     /**

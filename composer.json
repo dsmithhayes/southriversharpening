@@ -10,7 +10,8 @@
     "monolog/monolog": "^1.21",
     "symfony/yaml": "^3.1",
     "dsmithhayes/extended": "^0.5.0",
-    "ext-imagick": "^3.4@RC"
+    "ext-imagick": "^3.4@RC",
+    "fpdo/fluentpdo": "^1.1"
   },
   "require-dev": {
     "phpunit/phpunit": "^5.5"

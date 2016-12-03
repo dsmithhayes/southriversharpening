@@ -20,7 +20,7 @@ $app->get('/[dashboard]', function ($req, $res) {
  */
 $app->get('/login', function (Request $req, Response $res) {
     return $this->view->render($res, 'admin/login.twg', [
-
+        'title' => 'Login'
     ]);
 })->setName('login-page');
 
@@ -31,5 +31,11 @@ $app->post('/login', function (Request $req, Response $res) {
 
     return $res;
 })->setName('login-auth');
+
+$app->get('/home', function (Request $req, Response $res) {
+    return $this->view->render($res, 'admin/home.twig', [
+        'title' => 'Home'
+    ]);
+});
 
 $app->run();

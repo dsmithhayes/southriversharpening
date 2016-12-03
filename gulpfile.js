@@ -12,6 +12,7 @@ var locations = {
     public: './public',
     admin: './admin'
   },
+  scss: '/scss',
   css: '/css',
   js: '/js',
   images: '/images'

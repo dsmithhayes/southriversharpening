@@ -6,3 +6,11 @@ public/js
 .vagrant
 www.pid
 assets/data.db
+
+admin/css
+admin/js
+admin/images
+
+public/css
+public/js
+public/images

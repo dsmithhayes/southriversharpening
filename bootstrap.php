@@ -17,7 +17,6 @@ use Cake\ORM\TableRegistry;
 use Cake\Datasource\ConnectionManager;
 use SouthRiverSharpening\Gallery;
 use SouthRiverSharpening\Services;
-use FluentPDO;
 
 /**
  * Set up the application
@@ -51,16 +50,6 @@ $container['config'] = function ($container) {
     }
 
     return $tmp;
-};
-
-/**
- * FluentPDO Instance with the SQLite3 Database
- */
-$container['fpdo'] = function ($container) {
-    $path = $container->config['sqlite']['path'];
-    $dsn = "sqlite://{$path}";
-
-    return new FluentPDO($dsn);
 };
 
 /**

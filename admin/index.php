@@ -9,9 +9,27 @@ use Psr\Message\Http\ResponseInterface as Response;
  * The Dashboard is where all of the controls for the content in the site is
  * located. A user must be authenticated to use the Dashboard.
  */
-$app->get('/[dashboard]', function (Request $req, Response $res) {
+$app->get('/[dashboard]', function ($req, $res) {
+    return $this->view->render($res, 'admin/dashboard.twig', [
+        'title' => 'Admin Dashboard'
+    ]);
+})->setName('dashboard');
+
+/**
+ * Get the Login form page
+ */
+$app->get('/login', function (Request $req, Response $res) {
+    return $this->view->render($res, 'admin/login.twg', [
+
+    ]);
+})->setName('login-page');
+
+/**
+ * Checks the credentials of the user and logs them in.
+ */
+$app->post('/login', function (Request $req, Response $res) {
 
     return $res;
-})->name('dashboard');
+})->setName('login-auth');
 
 $app->run();

@@ -6,39 +6,57 @@ var gulp      = require('gulp'),
     minifycss = require('gulp-minify-css'),
     uglify    = require('gulp-uglify');
 
-var SRC        = './assets',
-    DIST       = './public',
-    SASS_SRC   = SRC + '/scss',
-    SASS_DIST  = DIST + '/css',
-    JS_SRC     = SRC + '/js',
-    JS_DIST    = DIST + '/js';
+var locations = {
+  src: './assets',
+  dist: {
+    public: './public',
+    admin: './admin'
+  },
+  css: '/css',
+  js: '/js',
+  images: '/images'
+};
+
+var all_js   = '/**/*.js',
+    all_scss = '/**/*.scss',
+    all_css  = '/**/*.css',
+    all_images = '/**/*';
 
 // Combines and uglifies the JavaScript, places it in the document root
 gulp.task('js', function() {
-  return gulp.src(JS_SRC + '/**/*.js')
+  return gulp.src(locations.src + locations.js + all_js)
              .pipe(uglify())
              .on('error', (err) => {
                console.log('Error uglifying the JavaScript: ' + err);
                return false;
              })
              .pipe(rename({suffix: '.min'}))
-             .pipe(gulp.dest(JS_DIST));
+             .pipe(gulp.dest(locations.dist.public + locations.js))
+             .pipe(gulp.dest(locations.dist.admin + locations.js));
 });
 
 // Builds the CSS out of the SASS.
 gulp.task('sass', function() {
-  return gulp.src(SASS_SRC + '/**/*.scss')
+  return gulp.src(locations.src + locations.scss + all_scss)
              .pipe(sass().on('error', sass.logError))
              .pipe(minifycss())
              .pipe(rename({suffix: '.min'}))
-             .pipe(gulp.dest(SASS_DIST));
+             .pipe(gulp.dest(locations.dist.public + locations.css))
+             .pipe(gulp.dest(locations.dist.admin + locations.css));
 });
 
 // Places the final compiled CSS file into the document root
 gulp.task('css', function() {
-  return gulp.src(SASS_SRC + '/**/*.css')
+  return gulp.src(locations.src + locations.scss + all_css)
              .pipe(sass().on('error', sass.logError))
-             .pipe(gulp.dest(SASS_DIST));
+             .pipe(gulp.dest(locations.dist.public + locations.css))
+             .pipe(gulp.dest(locations.dist.admin + locations.css));
+});
+
+gulp.task('images', function() {
+  return gulp.src(locations.src + locations.images + all_images)
+             .pipe(gulp.dest(locations.dist.public + locations.images))
+             .pipe(gulp.dest(locations.dist.admin + locations.images));
 });
 
 // Watches for changes to files within the SASS and JS directories
@@ -48,4 +66,4 @@ gulp.task('watch', function() {
 });
 
 // Compiles the SASS, puts the CSS into the document root, along with the JS
-gulp.task('default', ['sass', 'css', 'js']);
+gulp.task('default', ['sass', 'css', 'js', 'images']);

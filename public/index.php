@@ -9,7 +9,7 @@
  * occurs. The bootstrap file required below will set up the Slim application
  * with all its necessary middleware and dependencies
  */
-$app = require '../bootstrap.php';
+$app = require_once '../bootstrap.php';
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;

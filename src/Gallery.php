@@ -25,12 +25,19 @@ class Gallery
     private $location;
 
     /**
+     * @var \Imagick
+     *      Instance of a Imagick object for processing all of the images
+     */
+    private $imagick;
+
+    /**
      * @param string $location
      *      The location of the images on the file system
      */
     public function __construct(string $location)
     {
         $this->location = $location;
+        $this->imagick = new Imagick($this->readDir());
     }
 
     /**

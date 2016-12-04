@@ -45,7 +45,7 @@ $app->get('/home', function ($req, $res) {
  * When changes to the home page are made
  */
 $app->map(['POST', 'PUT'], '/home', function ($req, $res, $args) {
-
+    $res->getBody()->write($args['title']);
     return $res;
 });
 

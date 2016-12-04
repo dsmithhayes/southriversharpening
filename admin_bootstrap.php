@@ -13,7 +13,7 @@ $container = $app->getContainer();
  */
 $app->add(function ($req, $res, $next) {
     // check for the active session and authentication
-    
+
 
     // build out the next response
     $res = $next($req, $res);
@@ -26,7 +26,9 @@ $app->add(function ($req, $res, $next) {
  * Connect to the database
  */
 
+$container['pdo'] = function ($container) {
 
+};
 
 /**
  * Load the models

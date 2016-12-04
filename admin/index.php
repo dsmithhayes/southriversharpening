@@ -18,7 +18,7 @@ $app->get('/[dashboard]', function ($req, $res) {
 /**
  * Get the Login form page
  */
-$app->get('/login', function (Request $req, Response $res) {
+$app->get('/login', function ($req, $res) {
     return $this->view->render($res, 'admin/login.twg', [
         'title' => 'Login'
     ]);
@@ -27,15 +27,26 @@ $app->get('/login', function (Request $req, Response $res) {
 /**
  * Checks the credentials of the user and logs them in.
  */
-$app->post('/login', function (Request $req, Response $res) {
+$app->post('/login', function ($req, $res, $args) {
 
     return $res;
 })->setName('login-auth');
 
-$app->get('/home', function (Request $req, Response $res) {
+/**
+ * The page to edit the content of the page.
+ */
+$app->get('/home', function ($req, $res) {
     return $this->view->render($res, 'admin/home.twig', [
         'title' => 'Home'
     ]);
+})->setName('home');
+
+/**
+ * When changes to the home page are made
+ */
+$app->map(['POST', 'PUT'], '/home', function ($req, $res, $args) {
+
+    return $res;
 });
 
 $app->run();

@@ -62,8 +62,8 @@ gulp.task('images', function() {
 
 // Watches for changes to files within the SASS and JS directories
 gulp.task('watch', function() {
-  gulp.watch(SASS_SRC + '/**/*.scss', ['sass', 'css']);
-  gulp.watch(JS_SRC + '/**/*.js', ['js']);
+  gulp.watch(locations.src + locations.scss + all_scss, ['sass', 'css']);
+  gulp.watch(locations.src + locations.js + all_js, ['js']);
 });
 
 // Compiles the SASS, puts the CSS into the document root, along with the JS

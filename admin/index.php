@@ -44,8 +44,12 @@ $app->get('/home', function ($req, $res) {
 /**
  * When changes to the home page are made
  */
-$app->map(['POST', 'PUT'], '/home', function ($req, $res, $args) {
-    $res->getBody()->write($args['title']);
+$app->post('/home', function ($req, $res, $args) {
+    if (!isset($args['update-home']['title'])) {
+        $res->getBody()->write('Must have a title!');
+        $res = $res->withStatus(500);
+    }
+
     return $res;
 });
 

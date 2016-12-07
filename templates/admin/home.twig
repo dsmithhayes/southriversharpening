@@ -1,7 +1,7 @@
 {% extends 'skeleton.twig' %}
 
 {% block content %}
-<form id="home" method="POST">
+<form name="update-home" id="home" method="POST" action="/home">
   <article>
     <h1>Update the Home page</h1>
     <div>
@@ -13,7 +13,7 @@
       <textarea id="content" name="content"></textarea>
     </div>
     <div>
-      <button id="submit" type="submit">Submit</button>
+      <input type="submit" label="Submit" name="submit" />
     </div>
   </article>
 </form>

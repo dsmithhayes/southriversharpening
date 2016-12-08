@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @author Dave Smith-Hayes <me@davesmithhayes>
+ */
+
 $app = require_once '../admin_bootstrap.php';
 
 use Psr\Message\Http\ServerRequestInterface as Request;

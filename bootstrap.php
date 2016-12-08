@@ -1,6 +1,7 @@
 <?php
 
 require_once 'vendor/autoload.php';
+require_once 'functions.php';
 
 /**
  * Assures the bootstrap is always in the root of the project directory.
@@ -19,11 +20,18 @@ use SouthRiverSharpening\Gallery;
 use SouthRiverSharpening\Services;
 
 /**
+ * Sets the debugging of the application.
+ */
+$is_local = function() {
+    return [
+        'displayErrorDetails' => (gethostname() === 'localhost') ? true : false
+    ];
+};
+
+/**
  * Set up the application
  */
-$app = new Slim\App([
-    'settings' => ['displayErrorDetails' => true]
-]);
+$app = new Slim\App([ 'settings' => $is_local() ]);
 
 /**
  * Break out the container
@@ -47,9 +55,21 @@ $container['config'] = function ($container) {
 
     if (empty($tmp)) {
         $tmp = ['error' => 'No configuration files loaded.'];
+    } else {
+        $tmp['error'] = null;
     }
 
     return $tmp;
+};
+
+$container['datasource'] = function ($container) {
+    if (!$container['config']['sqlite']) {
+        throw new Exception($container['config']['error']);
+    }
+
+    $location = $container['config']['sqlite']['path'];
+    $location .= $container['config']['sqlite']['name'];
+    $dsn = "sqlite:{$location}";
 };
 
 /**

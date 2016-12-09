@@ -16,23 +16,35 @@
  */
 
 /**
+ * The default settings used in both production and development environments.
+ */
+function settings_load(): array {
+    return [
+        'settings' => [
+            'addContentLengthHeader' => false
+
+            // Add the Logger here
+        ]
+    ];
+}
+
+/**
  * Loads the production applciation settings
  */
 function settings_load_production(): array {
-    // Put the settings for production here
-    return [
-
-    ];
+    $s = settings_load();
+    return $s;
 }
 
 /**
  * Loads the development application settings
  */
 function settings_load_development(): array {
-    // Put the settings for development here
-    return [
+    $s = settings_load();
 
-    ];
+    $s['settings']['displayErrorDetails'] = true;
+
+    return $s;
 }
 
 /**
@@ -41,6 +53,6 @@ function settings_load_development(): array {
  * @return array
  *      The array of application settings
  */
-function settings_set_env(bool $debug = false): array {
+function settings_get(bool $debug = false): array {
     return ($debug) ? settings_load_development() : settings_load_production();
 }

@@ -26,14 +26,6 @@ $app->add(function (Request $req, Response $res, callabe $next) {
 });
 
 /**
- * Connect to the database
- */
-
-$container['pdo'] = function ($container) {
-
-};
-
-/**
  * Load the models
  */
 

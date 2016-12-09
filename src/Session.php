@@ -34,6 +34,8 @@ class Session
 
         // start the session
         session_start(['session.name' => $name]);
+
+        // set the session values
         $this->sid = session_id();
         $this->name = $name;
 

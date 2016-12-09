@@ -36,7 +36,9 @@ class ContactForm
      */
     public function __construct(Container $container)
     {
+        $this->to = $container['config']['contact_form']['to'];
 
+        // get the details from the POST
     }
 
     /**
